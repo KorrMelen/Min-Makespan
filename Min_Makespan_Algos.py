@@ -56,13 +56,3 @@ def merge_sort(L):
 def LPT(D, M):
 	D = merge_sort(D)
 	return (LSA(D,M))
-
-
-
-
-D = [2,7,1,3,2,6,2,3,6,2,5]
-M = [0]*3
-print LSA(D,M)
-D = [2,7,1,3,2,6,2,3,6,2,5]
-M = [0]*3
-print LPT(D,M)
