@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from random import randint
 
 def input_file():
-	name_file = input("Entrez le nom du fichier\n")
+	name_file = input("Entrez le nom du fichier :\n")
 	file = open(name_file,"r")
 	instance = file.read()
 	file.close()
@@ -19,7 +19,7 @@ def input_file():
 
 
 def input_keyboard():
-	instance = input("Donnez l'instance dans le format m:n:d1:d2:...:dn\n")
+	instance = input("Donnez l'instance dans le format m:n:d1:d2:...:dn :\n")
 	instance = instance.split(":")
 	instance = list(map(int,instance))
 
@@ -32,7 +32,7 @@ def input_keyboard():
 
 
 def input_Im():
-	m = int(input("Donnez le nombre de machine\n"))
+	m = int(input("Donnez le nombre de machine :\n"))
 	M = [0]*m
 	D = [0]*(2*m+1)
 	D[0] = m
@@ -42,11 +42,11 @@ def input_Im():
 
 
 def input_Ir():
-	m = int(input("Donnez le nombre de machine\n"))
-	n = int(input("Donnez le nombre de tâche\n"))
-	k = int(input("Donnez le nombre d'instance\n"))
-	minv = int(input("Donnez la durée minimum d'une tâche\n"))
-	maxv = int(input("Donnez la durée maximum d'une tâche\n"))
+	m = int(input("Donnez le nombre de machine :\n"))
+	n = int(input("Donnez le nombre de tâche :\n"))
+	k = int(input("Donnez le nombre d'instance :\n"))
+	minv = int(input("Donnez la durée minimum d'une tâche :\n"))
+	maxv = int(input("Donnez la durée maximum d'une tâche :\n"))
 	Ms = []
 	Ds = []
 	M = [0]*m

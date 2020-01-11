@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 def LSA(D, M):
 	for i in D:
 		tmin = M[0]
