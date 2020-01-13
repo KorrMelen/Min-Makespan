@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from math import ceil
+
 def LSA(D, M):
 	for i in D:
 		tmin = M[0]
@@ -58,3 +60,20 @@ def merge_sort(L):
 def LPT(D, M):
 	D = merge_sort(D)
 	return (LSA(D,M))
+
+
+def MYALGO(D, M):
+	D = merge_sort(D)
+	borneInf = max(max(D),ceil(sum(D)/len(M)))
+	nonPlace = []
+	for i in D:
+		place = False
+		j = 0
+		while j < len(M) and not place :
+			if M[j] + i <= borneInf :
+				M[j] += i
+				place = True
+			j+=1
+		if not place :
+			nonPlace.append(i)
+	return (LSA(nonPlace,M))

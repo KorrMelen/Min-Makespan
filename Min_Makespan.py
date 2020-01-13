@@ -42,6 +42,8 @@ while(True):
 		ratioLSA = resLSA / max(borneInfMoy,borneInfMax)
 		resLPT = max(Min_Makespan_Algos.LPT(D.copy(),M.copy()))
 		ratioLPT = resLPT / max(borneInfMax,borneInfMoy)
+		resMYALGO = max(Min_Makespan_Algos.MYALGO(D.copy(),M.copy()))
+		ratioMYALGO = resMYALGO / max(borneInfMax,borneInfMoy)
 
 		print("Borne Inférieur Maximun = ",borneInfMax)
 		print("Borne Inférieur Moyenne = ",borneInfMoy)
@@ -49,16 +51,21 @@ while(True):
 		print("Ratio LSA = ",ratioLSA)
 		print("Résultat LPT = ",resLPT)
 		print("Ratio LPT = ",ratioLPT)
+		print("Résultat MYALGO = ",resMYALGO)
+		print("Ratio MYALGO = ",ratioMYALGO)
 
 	else:
 		ratioLSA = 0
 		ratioLPT = 0
+		ratioMYALGO = 0
 		for i in range(len(D)):
 			borneInfMax = max(D[i])
 			borneInfMoy = ceil(sum(D[i])/len(M[i]))
 			ratioLSA += max(Min_Makespan_Algos.LSA(D[i].copy(),M[i].copy())) / max(borneInfMoy,borneInfMax)
 			ratioLPT += max(Min_Makespan_Algos.LPT(D[i].copy(),M[i].copy())) / max(borneInfMax,borneInfMoy)
+			ratioMYALGO += max(Min_Makespan_Algos.MYALGO(D[i].copy(),M[i].copy())) / max(borneInfMax,borneInfMoy)
 		print("Ratio moyen LSA = ",(ratioLSA/len(D)))
 		print("Ratio moyen LPT = ",(ratioLPT/len(D)))
+		print("Ratio moyen MYALGO = ",(ratioMYALGO/len(D)))
 
 	print("#################################################################")
